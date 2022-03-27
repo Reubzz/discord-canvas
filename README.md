@@ -1,11 +1,5 @@
 # Reubz - discord-canvas
-
-[![downloadsBadge](https://img.shields.io/npm/dt/discord-canvas?style=for-the-badge)](https://npmjs.com/discord-canvas)
-[![versionBadge](https://img.shields.io/npm/v/discord-canvas?style=for-the-badge)](https://npmjs.com/discord-canvas)
-
-## Easy to use !!
-
-Welcome Channel Images for Welcome Module in Reubz Bot
+- Welcome Channel Images for Welcome Module in Reubz Bot
 
 ## Installation
 
