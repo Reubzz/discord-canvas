@@ -40,8 +40,6 @@ const attachment = new Discord.Attachment(image.toBuffer(), "goodbye-image.png")
 message.channel.send(attachment);
 ```
 
-<img src="https://i.imgur.com/gh6Yp00.png" height="250"></img>
-
 ## Example RankCard
 
 ```js
@@ -67,8 +65,6 @@ let attachment = new MessageAttachment(image.toBuffer(), "rank-card.png");
 
 message.channel.send(attachment)
 ```
-
-<img src="https://i.imgur.com/5L7qCkW.png" height="250"></img>
 
 
 ## Credits
