@@ -7,10 +7,16 @@ Canvas.registerFont(`${__dirname}/assets/fonts/SketchMatch.ttf`, { family: "Sket
 Canvas.registerFont(`${__dirname}/assets/fonts/LuckiestGuy-Regular.ttf`, { family: "luckiest guy" });
 // Register KeepCalm font
 Canvas.registerFont(`${__dirname}/assets/fonts/KeepCalm-Medium.ttf`, { family: "KeepCalm" });
+// Register BigBOBY Demo Regular Font
+Canvas.registerFont(`${__dirname}/assets/fonts/BigBOBYDemoRegular.ttf`, { family: "BigBOBY" })
+// Register Awesome Possum Font
+Canvas.registerFont(`${__dirname}/assets/fonts/Awesome-Possum-Demo.otf`, { family: "AwesomePossum" })
+// Register Franklin Gothic Medium Regular Font
+Canvas.registerFont(`${__dirname}/assets/fonts/Franklin-Gothic-Medium-Regular.ttf`, { family: "GothicMed" })
+// Register Lean Font
+Canvas.registerFont(`${__dirname}/assets/fonts/Lean.otf`, { family: "Lean" })
 
 module.exports.Base = require('./src/greetings/Base');
 module.exports.Welcome = require('./src/greetings/Welcome');
 module.exports.Goodbye = require('./src/greetings/Goodbye');
-module.exports.FortniteShop = require('./src/fortnite/Shop');
-module.exports.FortniteStats = require('./src/fortnite/Stats');
 module.exports.RankCard = require('./src/rank/Rank');

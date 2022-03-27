@@ -76,7 +76,7 @@ module.exports = class Greeting {
 
     async toAttachment() {
         // Create canvas
-        const canvas = Canvas.createCanvas(1024, 450);
+        const canvas = Canvas.createCanvas(1024, 500);
         const ctx = canvas.getContext("2d");
 
         const guildName = this.textMessage.replace(/{server}/g, this.guildName);
@@ -88,67 +88,38 @@ module.exports = class Greeting {
         let background = await Canvas.loadImage(this.backgroundImage);
         ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
-        // Draw layer
-        ctx.fillStyle = this.colorBorder;
-        ctx.globalAlpha = this.opacityBorder;
-        ctx.fillRect(0, 0, 25, canvas.height);
-        ctx.fillRect(canvas.width - 25, 0, 25, canvas.height);
-        ctx.fillRect(25, 0, canvas.width - 50, 25);
-        ctx.fillRect(25, canvas.height - 25, canvas.width - 50, 25);
-        ctx.fillStyle = this.colorUsernameBox;
-        ctx.globalAlpha = this.opacityUsernameBox;
-        ctx.fillRect(344, canvas.height - 296, 625, 65);
-        ctx.fillStyle = this.colorDiscriminatorBox;
-        ctx.globalAlpha = this.opacityDiscriminatorBox;
-        ctx.fillRect(389, canvas.height - 225, 138, 65);
-        ctx.fillStyle = this.colorMessageBox;
-        ctx.globalAlpha = this.opacityMessageBox;
-        ctx.fillRect(308, canvas.height - 110, 672, 65);
 
         // Draw username
+        const unameDiscrim = this.username + ` #` + this.discriminator
         ctx.globalAlpha = 1;
         ctx.fillStyle = this.colorUsername;
-        ctx.font = applyText(canvas, this.username, 48, 600, "Bold");
-        ctx.fillText(this.username, canvas.width - 660, canvas.height - 248);
-
-        // Draw guild name
-        ctx.fillStyle = this.colorMessage;
-        ctx.font = applyText(canvas, guildName, 53, 600, "Bold");
-        ctx.fillText(guildName, canvas.width - 690, canvas.height - 62);
-
-        // Draw discriminator
-        ctx.fillStyle = this.colorDiscriminator;
-        ctx.font = "40px Bold";
-        ctx.fillText(this.discriminator, canvas.width - 623, canvas.height - 178);
+        ctx.font = applyText(canvas, this.username, 48, 600, "Lean");
+        ctx.fillText(unameDiscrim, canvas.width / 2 - ctx.measureText(unameDiscrim).width / 2, canvas.height - 62);
 
         // Draw membercount
         ctx.fillStyle = this.colorMemberCount;
-        ctx.font = "22px Bold";
-        ctx.fillText(memberCount, 40, canvas.height - 35);
-
-        // Draw # for discriminator
-        ctx.fillStyle = this.colorHashtag;
-        ctx.font = "75px SketchMatch";
-        ctx.fillText("#", canvas.width - 690, canvas.height - 165);
+        ctx.font = "20px GothicMed";
+        const memberCountText = "You are the" + memberCount
+        ctx.fillText(memberCountText, canvas.width / 2 - ctx.measureText(memberCountText).width / 2, canvas.height - 20);
 
         // Draw title
-        ctx.font = "90px Bold";
+        ctx.font = "110px AwesomePossum";
         ctx.strokeStyle = this.colorTitleBorder;
-        ctx.lineWidth = 15;
-        ctx.strokeText(this.textTitle, canvas.width - 620, canvas.height - 330);
+        ctx.lineWidth = 10;
+        ctx.strokeText(this.textTitle, canvas.width / 2 - ctx.measureText(this.textTitle).width / 2, 380);
         ctx.fillStyle = this.colorTitle;
-        ctx.fillText(this.textTitle, canvas.width - 620, canvas.height - 330);
+        ctx.fillText(this.textTitle, canvas.width / 2 - ctx.measureText(this.textTitle).width / 2, 380);
 
         // Draw avatar circle
         ctx.beginPath();
         ctx.lineWidth = 10;
         ctx.strokeStyle = this.colorAvatar;
-        ctx.arc(180, 225, 135, 0, Math.PI * 2, true);
+        ctx.arc(512, 170, 135, 0, Math.PI * 2, true);
         ctx.stroke();
         ctx.closePath();
         ctx.clip();
         const avatar = await Canvas.loadImage(this.avatar);
-        ctx.drawImage(avatar, 45, 90, 270, 270);
+        ctx.drawImage(avatar, 377, 35, 270, 270);
 
         return canvas;
     }
