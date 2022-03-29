@@ -5,7 +5,7 @@ module.exports = class Greeting {
 
     constructor() {
         this.Data = dummyValues.data;
-        this.color = '#ffffff';
+        this.textColor = '#ffffff';
         this.backgroundImage = `${__dirname}/../../assets/img/LBImage.png`;
 
     }
