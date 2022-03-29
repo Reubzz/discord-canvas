@@ -20,3 +20,4 @@ module.exports.Base = require('./src/greetings/Base');
 module.exports.Welcome = require('./src/greetings/Welcome');
 module.exports.Goodbye = require('./src/greetings/Goodbye');
 module.exports.RankCard = require('./src/rank/Rank');
+module.exports.Leaderboard = require('./src/leaderboard/base');
