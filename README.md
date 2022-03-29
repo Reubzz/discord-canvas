@@ -29,7 +29,7 @@ const image = await new Canvas.Goodbye()
   .setBackground("https://site.com/background.jpg")
   .toAttachment();
 
-const attachment = new Discord.Attachment(image.toBuffer(), "goodbye-image.png");
+const attachment = new Discord.Attachment((await image).toBuffer(), "goodbye-image.png");
 
 message.channel.send(attachment);
 ```
@@ -55,11 +55,27 @@ let image = await new canvas.RankCard()
 .setBackground("https://www.site.com/background.jpg")
 .toAttachment();
 
-let attachment = new MessageAttachment(image.toBuffer(), "rank-card.png");
+let attachment = new MessageAttachment((await image).toBuffer(), "rank-card.png");
 
 message.channel.send(attachment)
 ```
 
+## Example Leaderbaord Image
+
+```js
+const Canvas = require("discord-canvas");
+const Discord = require("discord.js");
+
+const image = await new canvas.Leaderboard()
+  .setData(array) // Array of Leaderboard Data [xxx, yyy, zzz]
+  .setBackground(value) // Background Image
+  .setTextColor(value) // Hex Code Color
+  .toAttachment()
+
+const attachment = new Discord.MessageAttachment((await image).toBuffer(), "leaderboard.png");
+
+message.channel.send(attachment);
+```
 
 ## Credits
 
