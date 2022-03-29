@@ -1,5 +1,6 @@
 # Reubz - discord-canvas
-- Welcome Channel Images for Welcome Module in Reubz Bot
+- Various Canvas Models for different Modules for use by Bots made by Reubz.
+- Package made with the idea to have a Cleaner Code in the Bot Files. And also make this Package available and easy to transfer at the same time. 
 
 ## Installation
 
