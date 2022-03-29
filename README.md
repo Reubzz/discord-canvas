@@ -79,4 +79,4 @@ message.channel.send(attachment);
 
 ## Credits
 
-Made by [xixi52](https://github.com/xixi52), Forked and Edited by [Reubz](https://github.com/reubzz) for personal use.
+Made by [Reubz](https://github.com/reubzz) for personal discord bot use.
